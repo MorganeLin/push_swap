@@ -22,7 +22,7 @@ void	ft_swap_a(t_list **begin)
 	tmp->next = *begin;
 	*begin = tmp;
 }
-
+/*
 int	main(int ac, char **ag)
 {
 	t_list	*lst;
@@ -32,10 +32,10 @@ int	main(int ac, char **ag)
 
 	if(ac < 2)
 		return(0);
-	lst = create_node(ft_atoi(ag[1]));
-	node1 = create_node(ft_atoi(ag[2]));
-	node2 = create_node(ft_atoi(ag[3]));
-	node3 = create_node(ft_atoi(ag[4]));
+	lst = ft_create_node(ft_atoi(ag[1]));
+	node1 = ft_create_node(ft_atoi(ag[2]));
+	node2 = ft_create_node(ft_atoi(ag[3]));
+	node3 = ft_create_node(ft_atoi(ag[4]));
 	add_list(&lst, node1);
 	add_list(&lst, node2);
 	add_list(&lst, node3);
@@ -53,7 +53,6 @@ int	main(int ac, char **ag)
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
-	/*
 	printf("after lst value %d\n", lst->value);
 	printf("after node1 value : %d\n", lst->next->value);
 	printf("after lst : %p\n", lst);
@@ -61,5 +60,5 @@ int	main(int ac, char **ag)
 	printf("after node1 : %p\n", node1);
 	printf("after node1->next : %p\n", node1->next);
 	printf("after node2 : %p\n", node2);
-	*/
-}
+	
+}*/

@@ -2,7 +2,7 @@ NAME = push_swap.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g
 
-SRC = compare_args.c ft_atoi.c list.c parsing.c push_a.c swap.c
+SRC = ft_atoi.c list.c parsing.c push_a.c swap.c
 
 OBJ = $(SRC:.c=.o)
 

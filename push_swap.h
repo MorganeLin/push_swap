@@ -29,6 +29,6 @@ void	*ft_add_list(t_list **begin, t_list *new_last_node);
 void	*ft_clear(t_list **lst);
 int	ft_atoi(char *str);
 t_list	*ft_convert_args(int ac, char **ag, t_list **stack);
-int	ft_compare(int ac, char **ag, t_list **stack);
+int	ft_compare(t_list **stack);
 
 #endif

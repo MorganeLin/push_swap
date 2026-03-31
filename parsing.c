@@ -37,28 +37,18 @@ int	ft_isdigit(int ac,char **ag)
 	write(1, "OK - ft_isvalid\n", 16);
 	return (1);
 }
-
 int	ft_compare(t_list **stack)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < ac - 1)
+	while (*stack != NULL)
 	{
-		
-		j = i + 1;
-		while (j < ac)
+		if ((*stack)->value == (*stack)->next->value)
 		{
-			if (ag[i] == ag[j])
-			{
-				return (0);
-			}
-			j++;
+			write(1, "NO - ft_compare\n", 16);
+			return (0); 
 		}
-		i++;
-	}	
-	write(1, "OK - ft_compare\n", 16);
+		*stack = (*stack)->next;
+	}
+	write(1, "NO - ft_compare\n", 16);
 	return (1);
 }
 
@@ -88,6 +78,8 @@ int	ft_isvalid(int ac, char **ag, t_list **stack)
 {
 	if (ft_isdigit(ac, ag))
 		ft_convert_args(ac, ag, stack);
+	write(1, "OK - ft_isvalid\n", 15);
+	return(1);
 }
 int	main(int ac, char **ag)
 {
@@ -98,7 +90,10 @@ int	main(int ac, char **ag)
 		return (0);
 	}
 	if (ft_isvalid(ac, ag, &stack))
-		(ft_compare_args(ac, ag, stack));
+	{
+		ft_compare(&stack);
+		write(1, "OK\n", 3);
+	}
 	else 
 		write(1, "Error\n", 6);
 	return (0);
