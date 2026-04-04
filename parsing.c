@@ -6,7 +6,7 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:11:01 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/03/29 20:47:23 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/04 11:05:56 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,23 @@ int	ft_isdigit(int ac,char **ag)
 }
 int	ft_compare(t_list **stack)
 {
-	while (*stack != NULL)
+	t_list	*tmp;
+
+	tmp = *stack;
+	while ((*stack)->next != NULL)
 	{
-		if ((*stack)->value == (*stack)->next->value)
+		while (tmp->next != NULL)
 		{
-			write(1, "NO - ft_compare\n", 16);
-			return (0); 
+			if ((*stack)->value == tmp->value)
+			{
+				write(1, "NO - ft_compare\n", 16);
+				return (0); 
+			}
+			tmp = tmp->next;
 		}
 		*stack = (*stack)->next;
 	}
-	write(1, "NO - ft_compare\n", 16);
+	write(1, "OK - ft_compare\n", 16);
 	return (1);
 }
 
@@ -78,7 +85,7 @@ int	ft_isvalid(int ac, char **ag, t_list **stack)
 {
 	if (ft_isdigit(ac, ag))
 		ft_convert_args(ac, ag, stack);
-	write(1, "OK - ft_isvalid\n", 15);
+	write(1, "OK - ft_isvalid\n", 16);
 	return(1);
 }
 int	main(int ac, char **ag)
@@ -92,9 +99,8 @@ int	main(int ac, char **ag)
 	if (ft_isvalid(ac, ag, &stack))
 	{
 		ft_compare(&stack);
-		write(1, "OK\n", 3);
 	}
 	else 
-		write(1, "Error\n", 6);
+		write(1, "Error - ft_compare\n", 6);
 	return (0);
 }
