@@ -6,7 +6,7 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:11:01 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/04 11:05:56 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/04 17:02:17 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_isdigit(int ac,char **ag)
 		}
 		i++;	
 	}
-	write(1, "OK - ft_isvalid\n", 16);
+	write(1, "OK - ft_isdigit\n", 16);
 	return (1);
 }
 int	ft_compare(t_list **stack)
@@ -42,11 +42,16 @@ int	ft_compare(t_list **stack)
 	t_list	*tmp;
 
 	tmp = *stack;
+	if (stack == NULL)
+	{
+		write(1, "NO - ft_compare\n", 16);
+		return (0);
+	}
 	while ((*stack)->next != NULL)
 	{
 		while (tmp->next != NULL)
 		{
-			if ((*stack)->value == tmp->value)
+			if ((*stack)->value == tmp->next->value)
 			{
 				write(1, "NO - ft_compare\n", 16);
 				return (0); 
@@ -66,6 +71,11 @@ t_list	*ft_convert_args(int ac, char **ag, t_list **stack)
 	t_list	*next_node;
 
 	i = 2;
+	if (!stack)
+	{
+		write(1, "KO - les arguments sont convertis\n", 34);
+		return (NULL);
+	}
 	*stack = ft_create_node(ft_atoi(ag[1]));
 	while (i < ac)
 	{
@@ -85,6 +95,11 @@ int	ft_isvalid(int ac, char **ag, t_list **stack)
 {
 	if (ft_isdigit(ac, ag))
 		ft_convert_args(ac, ag, stack);
+	else
+	{
+		write(1, "KO - ft_isdigit\n", 16);
+		return (0);
+	}
 	write(1, "OK - ft_isvalid\n", 16);
 	return(1);
 }
