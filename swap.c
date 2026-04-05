@@ -6,15 +6,15 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 17:10:22 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/04 22:12:11 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/05 15:31:11 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap_a(t_list **begin)
+void	ft_swap_a(t_stack **begin)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if ((*begin)->next == NULL || *begin == NULL)
 		return ;
@@ -26,10 +26,10 @@ void	ft_swap_a(t_list **begin)
 /*
 int	main(int ac, char **ag)
 {
-	t_list	*lst;
-	t_list	*node1;
-	t_list	*node2;
-	t_list	*node3;
+	t_stack	*lst;
+	t_stack	*node1;
+	t_stack	*node2;
+	t_stack	*node3;
 
 	if(ac < 2)
 		return(0);
@@ -40,7 +40,7 @@ int	main(int ac, char **ag)
 	add_list(&lst, node1);
 	add_list(&lst, node2);
 	add_list(&lst, node3);
-	t_list	*tmp = lst;
+	t_stack	*tmp = lst;
 	while(tmp != NULL)
 	{
 		printf("%d\n", tmp->value);

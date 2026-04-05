@@ -6,7 +6,7 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:10:07 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/05 14:52:24 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/05 15:39:58 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <libft/libft.h>
+# include "libft/libft.h"
 
 typedef struct s_stack
 {

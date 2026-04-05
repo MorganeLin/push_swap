@@ -6,16 +6,16 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 11:43:24 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/04 22:07:48 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/05 15:30:30 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push(t_list **stack_a, t_list **stack_b)
+void	ft_push(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
 	tmp2 = NULL;
 	if (!*stack_a)
@@ -31,11 +31,11 @@ int	main(int ac, char **ag)
 {
 	if (ac < 2)
 		return (0);
-	t_list	*stack_a;
-	t_list	*stack_b;
-	t_list	*node1;
-	t_list	*node2;
-	t_list	*node3;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack	*node1;
+	t_stack	*node2;
+	t_stack	*node3;
 
 	stack_a = ft_create_node(ft_atoi(ag[1]));
 	node1 = ft_create_node(ft_atoi(ag[2]));
