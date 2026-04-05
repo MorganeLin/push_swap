@@ -6,7 +6,7 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:11:01 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/05 22:51:15 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/05 23:18:55 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,27 @@ int	ft_isnb(int ac, char **ag)
 int	ft_compare(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*compare_with;
 
 	if (*stack == NULL)
 	{
 		write(1, "NO - ft_compare\n", 16);
 		return (0);
 	}
-	while ((*stack)->next != NULL)
+	compare_with = *stack;
+	while (compare_with->next != NULL)
 	{
-		tmp = *stack;
+		tmp = compare_with;
 		while (tmp->next != NULL)
 		{
-			if ((*stack)->value == tmp->next->value)
+			if (compare_with->value == tmp->next->value)
 			{
 				write(1, "NO - ft_compare\n", 16);
 				return (0);
 			}
 			tmp = tmp->next;
 		}
-		*stack = (*stack)->next;
+		compare_with = compare_with->next;
 	}
 	write(1, "OK - ft_compare\n", 16);
 	return (1);
@@ -125,20 +127,20 @@ t_stack	*ft_convert_split_args(char **ag, t_stack **stack)
 	return (*stack);
 }
 
-int	ft_isvalid(int ac, char **ag, t_stack **stack, char **str)
+int	ft_isvalid(int ac, t_stack **stack, char **str)
 {
 	if (ac == 2)
 	{
-		if (ft_check_digit(ag))
+		if (ft_check_digit(str))
 		{	
-			str = ft_split(ag[1], ' ');	
+			str = ft_split(str[1], ' ');	
 			ft_convert_split_args(str, stack);
 		}
 	}
 	if (ac > 2)
 	{
-		if (ft_isnb(ac, ag))
-			ft_convert_args(ac, ag, stack);
+		if (ft_isnb(ac, str))
+			ft_convert_args(ac, str, stack);
 	}
 	return (1);
 }
@@ -155,12 +157,13 @@ int	main(int ac, char **ag)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	if (ft_isvalid(ac, ag, &stack, str))
+	if (ft_isvalid(ac, &stack, str))
 	{	
 		if (ft_compare(&stack))
 			write(1, "OK - pour trier\n", 16);
 		else
 			write(1, "Error - ft_compare\n", 19);
 	}
+	ft_clear(&stack);
 	return (0);
 }
