@@ -6,7 +6,7 @@
 /*   By: mduhoux <mduhoux@student.42belgium.be      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:10:07 by mduhoux           #+#    #+#             */
-/*   Updated: 2026/04/05 15:39:58 by mduhoux          ###   ########.fr       */
+/*   Updated: 2026/04/05 18:11:53 by mduhoux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	*ft_add_list(t_stack **begin, t_stack *new_last_node);
 void	*ft_clear(t_stack **lst);
 t_stack	*ft_convert_args(int ac, char **ag, t_stack **stack);
 int		ft_compare(t_stack **stack);
+int	ft_check_digit(char **ag);
 
 #endif
