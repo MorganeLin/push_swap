@@ -1,8 +1,8 @@
 NAME = push_swap
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g 
 
-SRC = list.c parsing.c push.c swap.c verif_num.c
+SRC = main.c list.c parsing.c push.c swap.c verif_num.c check.c
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 LIBFT = ./libft/libft.a
 OBJ_DIR = build

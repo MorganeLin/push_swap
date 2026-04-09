@@ -114,26 +114,3 @@ int	ft_isvalid(int ac, t_stack **stack, char **str)
 	}
 	return (1);
 }
-
-int	main(int ac, char **ag)
-{
-	t_stack	*stack;
-	char	**str;
-
-	str = ag;
-	stack = NULL;
-	if (ac == 1)
-	{
-		write(1, "Error\n", 6);
-		return (1);
-	}
-	if (ft_isvalid(ac, &stack, str))
-	{
-		if (ft_compare(&stack))
-			write(1, "OK - pour trier\n", 16);
-		else
-			write(1, "Error - ft_compare\n", 19);
-	}
-	ft_clear(&stack);
-	return (0);
-}

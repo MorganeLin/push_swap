@@ -26,7 +26,7 @@ void	ft_push(t_stack **stack_a, t_stack **stack_b)
 	tmp = *stack_b;
 	tmp->next = tmp2;
 }
-
+/*
 int	main(int ac, char **ag)
 {
 	if (ac < 2)
@@ -70,4 +70,4 @@ int	main(int ac, char **ag)
 		printf("%d\n", stack_b->value);
 		stack_b = stack_b->next;
 	}
-}
+}*/

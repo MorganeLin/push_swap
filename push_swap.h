@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
@@ -32,5 +31,7 @@ int		ft_compare(t_stack **stack);
 int		ft_check_digit(char **ag);
 int	ft_isnb(int ac, char **ag);
 void	ft_push(t_stack **stack_a, t_stack **stack_b);
+int	ft_check_is_in_order(t_stack **stack);
+int	ft_isvalid(int ac, t_stack **stack, char **str);
 
 #endif
