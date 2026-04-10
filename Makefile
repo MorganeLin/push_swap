@@ -1,5 +1,5 @@
 NAME = push_swap
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g 
 
 SRC = main.c list.c parsing.c push.c swap.c verif_num.c check.c
